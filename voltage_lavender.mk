@@ -24,11 +24,17 @@
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/lavender/device.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common VoltageOS stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
+
+# Official-ify
+VOLTAGE_BUILD_TYPE := OFFICIAL
+
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 2160
 
 # Device identifier
-PRODUCT_NAME := lineage_lavender
+PRODUCT_NAME := voltage_lavender
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_PLATFORM := SDM660
 PRODUCT_DEVICE := lavender
